@@ -1,3 +1,3 @@
 # SoloLinux
-![Logo](images/SoloLinux4.png)
+![Logo](SoloLinux4.png)
 An Arch-based distro that I made using archiso 
