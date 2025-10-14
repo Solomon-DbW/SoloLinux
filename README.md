@@ -1,4 +1,3 @@
-![Logo](SoloLinux4.png)
 <img src="SoloLinux4.png" alt="drawing" width="400"/>
 
 # SoloLinux
