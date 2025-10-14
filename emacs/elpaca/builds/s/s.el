@@ -1,0 +1,1 @@
+/home/solomon/.config/emacs/elpaca/repos/s/s.el

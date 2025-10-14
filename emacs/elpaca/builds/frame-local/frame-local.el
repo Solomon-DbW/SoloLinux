@@ -1,0 +1,1 @@
+/home/solomon/.config/emacs/elpaca/repos/frame-local/frame-local.el

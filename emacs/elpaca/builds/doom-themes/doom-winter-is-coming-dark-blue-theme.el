@@ -1,0 +1,1 @@
+/home/solomon/.config/emacs/elpaca/repos/themes/themes/doom-winter-is-coming-dark-blue-theme.el

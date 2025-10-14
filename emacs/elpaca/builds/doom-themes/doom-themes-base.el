@@ -1,0 +1,1 @@
+/home/solomon/.config/emacs/elpaca/repos/themes/doom-themes-base.el
