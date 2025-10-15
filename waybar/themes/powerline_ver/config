@@ -108,7 +108,7 @@
     "tooltip": false,
     "format-wifi": "  {essid}",
     "format-ethernet": "",
-    "on-click": "kitty -e nm-connection-editor"
+    "on-click": "kitty -e nmtui"
   },
   "backlight": {
     "tooltip": false,
@@ -154,6 +154,10 @@
   "custom/power": {
     "format": " ",
     "on-click": "bash ~/.config/waybar/scripts/power.sh"
+  },
+  "custom/select_wallpaper": {
+      "format": "",
+      "on-click": "~/.config/waybar/scripts/waypaper_launch.sh"
   },
 
   "custom/separator1": {"format": "\uE0B0"},
