@@ -10,15 +10,15 @@ sudo pacman -Sy git curl linux linux-firmware arch-install-scripts pacman-mirror
 git clone https://github.com/Solomon-DbW/SoloLinux/
 
 # Remove pre-existing config files and replace them with SoloLinux files
-rm -rf ~/.config/emacs && mv SoloLinux/emacs ~/.config
-rm -rf ~/.config/hypr && mv SoloLinux/hypr ~/.config
-rm -rf ~/.config/kitty && mv SoloLinux/kitty ~/.config
-rm -rf ~/.config/nvim && mv SoloLinux/nvim ~/.config
-rm -rf ~/.config/rofi && mv SoloLinux/rofi ~/.config
-rm -rf ~/.config/waybar && mv SoloLinux/waybar ~/.config
-rm -rf ~/.config/starship.toml && mv SoloLinux/starship.toml ~/.config
-rm -rf ~/.tmux.conf && mv SoloLinux/tmuxconffile ~/.tmux.conf
-rm -rf ~/.zshrc && mv SoloLinux/zshrcfile ~/.zshrc
+rm -rf ~/.config/emacs && mv ~/SoloLinux/emacs ~/.config
+rm -rf ~/.config/hypr && mv ~/SoloLinux/hypr ~/.config
+rm -rf ~/.config/kitty && mv ~/SoloLinux/kitty ~/.config
+rm -rf ~/.config/nvim && mv ~/SoloLinux/nvim ~/.config
+rm -rf ~/.config/rofi && mv ~/SoloLinux/rofi ~/.config
+rm -rf ~/.config/waybar && mv ~/SoloLinux/waybar ~/.config
+rm -rf ~/.config/starship.toml && mv ~/SoloLinux/starship.toml ~/.config
+rm -rf ~/.tmux.conf && mv ~/SoloLinux/tmuxconffile ~/.tmux.conf
+rm -rf ~/.zshrc && mv ~/SoloLinux/zshrcfile ~/.zshrc
 
 # Change shell to zsh
 sudo chsh -s $(which zsh)
@@ -33,4 +33,4 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 curl -fsS https://dl.brave.com/install.sh | sh
 
 # Install AUR packages via 'yay'
-yay -S hyprshade hyprshot-gui git-credential-manager-bin neofetch wlogout wallust quickshell  waypaper
+yay -S hyprshade hyprshot-gui git-credential-manager-bin neofetch wlogout
