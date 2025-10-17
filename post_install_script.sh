@@ -7,7 +7,7 @@ sudo pacman -Sy git curl linux linux-firmware arch-install-scripts pacman-mirror
 
 
 # Get SoloLinux config files
-git clone https://github.com/Solomon-DbW/SoloLinux/
+git clone https://github.com/Solomon-DbW/SoloLinux
 
 # Remove pre-existing config files and replace them with SoloLinux files
 rm -rf ~/.config/emacs && mv ~/SoloLinux/emacs ~/.config
