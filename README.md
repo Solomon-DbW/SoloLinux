@@ -1,5 +1,5 @@
 # SoloLinux
-An Arch-based distro that I made using archiso.
+An Arch-based distro/post-install script that I made using archiso.
 
 <img src="SoloLinux4.png" alt="drawing" width="400"/>
 
