@@ -4,7 +4,12 @@
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-cpufetch
+clear
+# figlet -f "ANSI Shadow" "SoloLinux"
+fastfetch --logo ~/.config/fastfetch/ascii.txt
+# echo "##### Based on Arch Linux #####"
+# cpufetch
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -104,7 +109,8 @@ fi
 
 alias cd="z"
 alias ls="eza --icons=always"
-# alias ls="eza -1 -T --icons=always"
+alias clear="clear && ls"
+# alias figlet='figlet -d ~/.local/share/figlet/'
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
