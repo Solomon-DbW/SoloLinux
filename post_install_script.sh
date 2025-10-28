@@ -2,7 +2,7 @@
 cd ~/
 
 # Install pacman packages
-sudo pacman -Sy git curl linux linux-firmware arch-install-scripts pacman-mirrorlist man-db man-pages vim  zsh starship rofi  gdm gnome-shell gnome-control-center xdg-user-dirs  hyprland waybar  emacs neovim kitty firefox  networkmanager wpa_supplicant dialog openresolv  ttf-dejavu noto-fonts noto-fonts-emoji ttf-font-awesome  zsh hyprland waybar hyprpaper rofi kitty nvim tmux firefox gnome-desktop libreoffice emacs brightnessctl pipewire starship zoxide eza fzf cpufetch jq yarn npm nodejs jupyter-notebook brightnessctl emacs ttf-jetbrains-mono pavucontrol  nemo gnome-desktop libreoffice yarn npm nodejs jupyter-notebook mako lua-language-server ghc haskell-language-server pipewire yazi hyprlock fzf fastfetch neofetch wlogout waypaper networkmanager network-manager-applet qemu cava swaync ags ast-grep wpctl figlet
+sudo pacman -Sy git curl linux linux-firmware arch-install-scripts pacman-mirrorlist man-db man-pages vim  zsh starship rofi  gdm gnome-shell gnome-control-center xdg-user-dirs  hyprland waybar  emacs neovim kitty firefox  networkmanager wpa_supplicant dialog openresolv  ttf-dejavu noto-fonts noto-fonts-emoji ttf-font-awesome  zsh hyprland waybar hyprpaper rofi kitty nvim tmux firefox gnome-desktop libreoffice emacs brightnessctl pipewire starship zoxide eza fzf cpufetch jq yarn npm nodejs jupyter-notebook brightnessctl emacs ttf-jetbrains-mono pavucontrol  nemo gnome-desktop libreoffice yarn npm nodejs jupyter-notebook mako lua-language-server ghc haskell-language-server pipewire yazi hyprlock fzf fastfetch neofetch wlogout waypaper networkmanager network-manager-applet qemu cava swaync ast-grep wpctl figlet
 
 # Install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -18,6 +18,7 @@ rm -rf ~/.config/kitty && mv ~/SoloLinux/kitty ~/.config
 rm -rf ~/.config/nvim && mv ~/SoloLinux/nvim ~/.config
 rm -rf ~/.config/rofi && mv ~/SoloLinux/rofi ~/.config
 rm -rf ~/.config/waybar && mv ~/SoloLinux/waybar ~/.config
+rm -rf ~/.config/fastfetch && mv ~/SoloLinux/fastfetch ~/.config
 rm -rf ~/.config/starship.toml && mv ~/SoloLinux/starship.toml ~/.config
 rm -rf ~/.tmux.conf && mv ~/SoloLinux/tmuxconffile ~/.tmux.conf
 rm -rf ~/.zshrc && mv ~/SoloLinux/zshrcfile ~/.zshrc
@@ -35,4 +36,16 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 curl -fsS https://dl.brave.com/install.sh | sh
 
 # Install AUR packages via 'yay'
-yay -S hyprshade hyprshot-gui git-credential-manager-bin neofetch wlogout waypaper
+yay -S hyprshade hyprshot-gui git-credential-manager-bin neofetch wlogout waypaper ags
+
+OS_RELEASE_FILE="/etc/os-release"
+
+# Backup the original file
+sudo cp "$OS_RELEASE_FILE" "${OS_RELEASE_FILE}.bak"
+
+# Replace NAME and PRETTY_NAME
+sudo sed -i 's/^NAME="Arch Linux"/NAME="SoloLinux"/' "$OS_RELEASE_FILE"
+sudo sed -i 's/^PRETTY_NAME="Arch Linux"/PRETTY_NAME="SoloLinux"/' "$OS_RELEASE_FILE"
+
+echo "OS name changed to SoloLinux in $OS_RELEASE_FILE."
+echo "Original file backed up as ${OS_RELEASE_FILE}.bak"
