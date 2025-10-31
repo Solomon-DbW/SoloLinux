@@ -1,10 +1,77 @@
+<!-- <!DOCTYPE html> -->
+<!-- <head> -->
+<!--     <title> -->
+<!--         SoloLinux -->
+<!--     </title> -->
+<!-- </head> -->
+<!---->
+<!-- <body> -->
+<!--     <h1>Idk</h1> -->
+<!--     <a href="">BBC Homepage</a> -->
+<!-- </body> -->
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>
-        SoloLinux
-    </title>
+  <meta charset="UTF-8">
+  <title>SoloLinux Repo Files</title>
+  <style>
+    body {
+      font-family: JetBrainsMono, monospace;
+      background: #0e0e0e;
+      color: #d0d0d0;
+      padding: 2em;
+    }
+    h1 {
+      color: #00aaff;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 8px 0;
+    }
+    a {
+      color: #00cc88;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
-
 <body>
-    <h1>Idk</h1>
+  <h1>SoloLinux Repo Files</h1>
+  <ul id="file-list">Loading...</ul>
+
+  <script>
+    const username = "Solomon-DbW";
+    const repo = "SoloLinux";
+    const branch = "gh-pages";
+
+    async function fetchRepoFiles(path = "") {
+      const url = `https://api.github.com/repos/${username}/${repo}/contents/${path}?ref=${branch}`;
+      const res = await fetch(url);
+      const data = await res.json();
+
+      const list = document.getElementById("file-list");
+      list.innerHTML = "";
+
+      data.forEach(item => {
+        const li = document.createElement("li");
+        if (item.type === "dir") {
+          li.innerHTML = `<strong>📁 <a href="?path=${item.path}">${item.name}</a></strong>`;
+        } else {
+          li.innerHTML = `📄 <a href="https://${username}.github.io/${repo}/${item.path}">${item.name}</a>`;
+        }
+        list.appendChild(li);
+      });
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const path = urlParams.get("path") || "";
+    fetchRepoFiles(path);
+  </script>
 </body>
+</html>
+
